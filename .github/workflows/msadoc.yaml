@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  lint:
+  msadoc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,7 +15,7 @@ jobs:
           node-version: 18
 
       - name: Install the MSAdoc CLI
-        run: npm install -g msadoc-cli@latest
+        run: npm install -g @msadoc/cli@latest
 
       - name: Upload the Service Doc
         run: msadoc upload ./msadoc.json --server=$MSADOC_SERVER_URL
