@@ -18,7 +18,6 @@ jobs:
         run: npm install -g @msadoc/cli@latest
 
       - name: Upload the Service Doc
-        run: msadoc upload ./msadoc.json --server=$MSADOC_SERVER_URL
+        run: msadoc upload ./msadoc.json --server="${{ secrets.MSADOC_SERVER_URL }}"
         env:
-          MSADOC_SERVER_URL: ${{ secrets.MSADOC_SERVER_URL }}
           MSADOC_API_KEY: ${{ secrets.MSADOC_API_KEY }}
